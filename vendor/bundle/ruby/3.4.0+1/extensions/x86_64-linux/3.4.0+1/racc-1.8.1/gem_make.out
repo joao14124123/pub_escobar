@@ -1,0 +1,18 @@
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/racc-1.8.1/ext/racc/cparse
+/home/joao/.rvm/rubies/ruby-3.4.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-smtqtv sitelibdir\=./.gem.20250121-42587-smtqtv clean
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-smtqtv sitelibdir\=./.gem.20250121-42587-smtqtv
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-smtqtv sitelibdir\=./.gem.20250121-42587-smtqtv install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250121-42587-smtqtv/racc
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-smtqtv sitelibdir\=./.gem.20250121-42587-smtqtv clean

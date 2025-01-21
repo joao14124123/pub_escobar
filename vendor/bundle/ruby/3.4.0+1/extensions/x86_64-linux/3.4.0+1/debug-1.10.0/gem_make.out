@@ -1,0 +1,19 @@
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/debug-1.10.0/ext/debug
+/home/joao/.rvm/rubies/ruby-3.4.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-5ok2wy sitelibdir\=./.gem.20250121-42587-5ok2wy clean
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-5ok2wy sitelibdir\=./.gem.20250121-42587-5ok2wy
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-5ok2wy sitelibdir\=./.gem.20250121-42587-5ok2wy install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250121-42587-5ok2wy/debug
+
+current directory: /home/joao/Desktop/Projetos Trabalho/pub_escobar/vendor/bundle/ruby/3.4.0+1/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250121-42587-5ok2wy sitelibdir\=./.gem.20250121-42587-5ok2wy clean
