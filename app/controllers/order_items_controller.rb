@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
     order_items = order.order_items.includes(:item)
     render json: order_items, include: :item
   end
-  
+
   def create
     order_item = OrderItem.new(order_item_params)
     if order_item.save

@@ -9,13 +9,13 @@ class OrdersController < ApplicationController
   end
 
   def index
-    orders = Order.all
-    render json: orders
+    order = Order.all
+    render json: order
   end
 
   def show
     order = Order.find(params[:id])
-    render json: order, include: { order_items: { include: :item } }
+    render json: order
   end
 
   def destroy
