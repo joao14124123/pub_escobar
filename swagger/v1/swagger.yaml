@@ -1,0 +1,290 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  /items:
+    get:
+      summary: Retrieve all items
+      responses:
+        '200':
+          description: A list of items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+    post:
+      summary: Create a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '201':
+          description: The created item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '422':
+          description: Unprocessable Entity
+
+  /items/{id}:
+    put:
+      summary: Update a specific item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the item
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          description: The updated item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '422':
+          description: Unprocessable Entity
+    get:
+      summary: Retrieve a specific item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the item
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The requested item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Item not found
+    delete:
+      summary: Delete a specific item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the item
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Item not found
+
+  /orders:
+    get:
+      summary: Retrieve all orders
+      responses:
+        '200':
+          description: A list of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+    post:
+      summary: Create a new order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: The created order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '422':
+          description: Unprocessable Entity
+
+  /orders/{id}:
+    get:
+      summary: Retrieve a specific order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The requested order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found
+    delete:
+      summary: Delete a specific order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Order not found
+    put:
+      summary: Update a specific order
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: The updated order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '422':
+          description: Unprocessable Entity
+
+  /orders/{order_id}/order_items:
+    get:
+      summary: Retrieve all order items for a specific order
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of order items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderItem'
+    post:
+      summary: Create a new order item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      responses:
+        '201':
+          description: The created order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+        '422':
+          description: Unprocessable Entity
+
+  /order_items/{id}:
+    put:
+      summary: Update a specific order item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order item
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      responses:
+        '200':
+          description: The updated order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+        '422':
+          description: Unprocessable Entity
+
+    delete:
+      summary: Delete a specific order item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order item
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Order item not found
+
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        pricing:
+          type: number
+          format: float
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+        customer_name:
+          type: string
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        quantity:
+          type: integer
+        item_id:
+          type: integer
+        order_id:
+          type: integer
