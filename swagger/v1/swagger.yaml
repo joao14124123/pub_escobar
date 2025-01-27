@@ -217,7 +217,59 @@ paths:
         '422':
           description: Unprocessable Entity
 
-  /order_items/{id}:
+  /orders/{order_id}/order_items/{id}:
+    put:
+      summary: Update a specific order item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order item
+          schema:
+            type: string
+        - name: order_id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderItem'
+      responses:
+        '200':
+          description: The updated order item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderItem'
+        '422':
+          description: Unprocessable Entity
+
+    delete:
+      summary: Delete a specific order item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order item
+          schema:
+            type: string
+        - name: order_id
+          in: path
+          required: true
+          description: The ID of the order
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Order item not found
+
     put:
       summary: Update a specific order item
       parameters:

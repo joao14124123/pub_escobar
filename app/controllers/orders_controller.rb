@@ -18,6 +18,15 @@ class OrdersController < ApplicationController
     render json: order
   end
 
+  def update
+    order = Order.find(params[:id])
+    if order.update(order_params)
+      render json: order
+    else
+      render json: order.errors, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     order = Order.find(params[:id])
     if order.destroy
